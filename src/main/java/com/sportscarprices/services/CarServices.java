@@ -24,13 +24,13 @@ public class CarServices {
 
     public List<Car> getCarByCarMaker(String carMaker) {
         return carRepository.findAll().stream()
-                .filter(car -> carMaker.equals(car.getCarMakerTemp()))
+                .filter(car -> carMaker.equals(car.getCarMaker()))
                 .collect(Collectors.toList());
     }
 
     public List<Car> getCarsByYear(Integer year) {
         return carRepository.findAll().stream()
-                .filter(car -> year.equals(car.getYearTemp()))
+                .filter(car -> year.equals(car.getYear()))
                 .collect(Collectors.toList());
     }
 }

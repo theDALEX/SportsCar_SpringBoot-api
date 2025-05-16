@@ -1,12 +1,7 @@
 package com.sportscarprices.entities;
 
 import jakarta.persistence.*;
-import lombok.*;
 
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
 @Entity
 @Table(name = "sportscarprices")
 public class Car {
@@ -62,14 +57,102 @@ public class Car {
      * the error doesnt make sense . i think its becasue of the lombok not syncying
      * to set @getter and @setters
      * so trying manually
+     * 
+     * after the jar is made and docker file the api i snot working as expected
+     * 
+     * the intuation was right the issues was fixed when manualy write arg and no
+     * args constructor
+     * saem with setter ans getter
      */
 
-    public String getCarMakerTemp() {
+    // Constructor without parameters
+    public Car() {
+    }
+
+    // Constructor with parameters
+    public Car(Integer id, String carMaker, String carModel, Integer year, String engineSize, String horsepower,
+            String torque, String accelerationZeroSixty, String priceUsd) {
+        this.id = id;
+        this.carMaker = carMaker;
+        this.carModel = carModel;
+        this.year = year;
+        this.engineSize = engineSize;
+        this.horsepower = horsepower;
+        this.torque = torque;
+        this.accelerationZeroSixty = accelerationZeroSixty;
+        this.priceUsd = priceUsd;
+    }
+
+    // Getters and Setters
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getCarMaker() {
         return carMaker;
     }
 
-    public Integer getYearTemp() {
+    public void setCarMaker(String carMaker) {
+        this.carMaker = carMaker;
+    }
+
+    public String getCarModel() {
+        return carModel;
+    }
+
+    public void setCarModel(String carModel) {
+        this.carModel = carModel;
+    }
+
+    public Integer getYear() {
         return year;
     }
 
+    public void setYear(Integer year) {
+        this.year = year;
+    }
+
+    public String getEngineSize() {
+        return engineSize;
+    }
+
+    public void setEngineSize(String engineSize) {
+        this.engineSize = engineSize;
+    }
+
+    public String getHorsepower() {
+        return horsepower;
+    }
+
+    public void setHorsepower(String horsepower) {
+        this.horsepower = horsepower;
+    }
+
+    public String getTorque() {
+        return torque;
+    }
+
+    public void setTorque(String torque) {
+        this.torque = torque;
+    }
+
+    public String getAccelerationZeroSixty() {
+        return accelerationZeroSixty;
+    }
+
+    public void setAccelerationZeroSixty(String accelerationZeroSixty) {
+        this.accelerationZeroSixty = accelerationZeroSixty;
+    }
+
+    public String getPriceUsd() {
+        return priceUsd;
+    }
+
+    public void setPriceUsd(String priceUsd) {
+        this.priceUsd = priceUsd;
+    }
 }
