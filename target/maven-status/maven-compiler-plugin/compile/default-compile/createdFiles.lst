@@ -1,0 +1,5 @@
+com\sportscarprices\repositories\CarRepository.class
+com\sportscarprices\SportscarpricesApplication.class
+com\sportscarprices\services\CarServices.class
+com\sportscarprices\controller\CarController.class
+com\sportscarprices\entities\Car.class
